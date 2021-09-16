@@ -5,8 +5,6 @@
 </template>
 <script>
 export default {
-  beforeCreate(){
-    console.log('231',this.$options);
-  }
+
 }
 </script>

@@ -20,17 +20,25 @@ VueRouter1.install = function (_Vue) {
   });
 
   //   定义组件
-  Vue.component('router-link',{
-     render(h){
-         console.log('this.slot',this.$slots);
-         return h('a',this.$slots.default)
-     }
+  Vue.component("router-link", {
+    render(h) {
+      console.log(this.$attrs);
+      return h(
+        "a",
+        {
+          attrs:{
+              href:'#'+this.$attrs.to
+          }
+        },
+        this.$slots.default
+      );
+    },
   });
-  Vue.component('router-view',{
-    render(h){
-        return h('div','router-view')
-    }
-})
+  Vue.component("router-view", {
+    render(h) {
+      return h("div", "router-view");
+    },
+  });
 };
 
 export default VueRouter1;
