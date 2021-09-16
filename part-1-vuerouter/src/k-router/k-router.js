@@ -4,7 +4,8 @@ import About from "../views/About.vue";
 // 手写建立的router插件
 class VueRouter1 {
   constructor(options) {
-    this.current = window.location.hash.slice(1) || "/";
+    // this.current = window.location.hash.slice(1) || "/";
+    Vue.util.defineReactive(this,'current',window.location.hash.slice(1))
     this.options = options;
     // 监听hash变化
     window.addEventListener("load", () => {
@@ -67,3 +68,22 @@ VueRouter1.install = function (_Vue) {
 };
 
 export default VueRouter1;
+
+/**
+ * bug：
+ * 1、路由切换 页面无法改变
+ * 2、是因为current 不是一个响应式数据，不会触发render函数重新进行渲染导致
+ */
+
+/**
+ * 解决办法
+ * 1、必须把current设置成为一个响应式数据
+ * 2、使用 Vue.set()方法 无法使用 api调用不允许 
+ * 3、使用 Vue.util.defineReactive() 方法来进行响应式数据的挂载
+ */
+
+/**
+ * ❗注意事项:
+ * 1、学习vue.util.defineReactive有关的知识。
+ * 2、学习vue render渲染函数的相关api配置
+ */
