@@ -1,7 +1,20 @@
 let Vue;
+import Home from "../views/Home.vue";
+import About from "../views/About.vue";
 // 手写建立的router插件
 class VueRouter1 {
-  constructor() {}
+  constructor(options) {
+    this.current = window.location.hash.slice(1) || "/";
+    this.options = options;
+    // 监听hash变化
+    window.addEventListener("load", () => {
+      this.current = window.location.hash.slice(1); //获取当前hash地址
+    });
+    // 页面load加载完成
+    window.addEventListener("hashchange", () => {
+      this.current = window.location.hash.slice(1); //获取当前hash地址
+    });
+  }
 }
 
 VueRouter1.install = function (_Vue) {
@@ -21,22 +34,34 @@ VueRouter1.install = function (_Vue) {
 
   //   定义组件
   Vue.component("router-link", {
+    //   h函数render函数调用时候，框架传入createElement 返回vdom
     render(h) {
-      console.log(this.$attrs);
+      //   return <a href={'#'+this.to}>{this.$slots.default}</a> 不推荐写法 jsx
       return h(
-        "a",
+        "a", //标签
         {
-          attrs:{
-              href:'#'+this.$attrs.to
-          }
+          //标签属性
+          attrs: {
+            href: "#" + this.$attrs.to,
+          },
         },
-        this.$slots.default
+        this.$slots.default //标签内容
       );
     },
   });
   Vue.component("router-view", {
+    //   render 函数如果放置组件配置，则会直接渲染组件
     render(h) {
-      return h("div", "router-view");
+      // 1、获取当前url中的hash值
+      // 2、遍历路由表，找到对应的组件进行渲染
+      let component = null;
+      const route = this.$router.options.routes.find((route) => {
+        return route.path == this.$router.current;
+      });
+      if (route) {
+        component = route.component;
+      }
+      return h(component);
     },
   });
 };
