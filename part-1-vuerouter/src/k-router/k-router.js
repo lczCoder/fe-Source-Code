@@ -21,12 +21,13 @@ VueRouter1.install = function (_Vue) {
 
   //   定义组件
   Vue.component('router-link',{
-     render: h=>{
-         return h('a','router-link')
+     render(h){
+         console.log('this.slot',this.$slots);
+         return h('a',this.$slots.default)
      }
   });
   Vue.component('router-view',{
-    render:h=>{
+    render(h){
         return h('div','router-view')
     }
 })
