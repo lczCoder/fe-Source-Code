@@ -6,7 +6,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    cout: 0,
+    cout: 10,
     asyncCout: 0,
   },
   mutations: {
