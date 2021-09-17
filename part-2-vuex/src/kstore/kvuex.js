@@ -7,14 +7,29 @@ class Store {
          */
         this.$options = options;
         //对传入的state选项做响应式处理
+        // 第一种方法
         // Vue.util.defineReactive(this,'state',this.$options.state) 不好的方法，用户可以直接访问state
-
-        this.state = new Vue({
+        // 第二种方法
+        // this.state = new Vue({
+        //     data(){
+        //         return options.state
+        //     }
+        // })
+        // TODO: 推荐方法
+        this._vm = new Vue({
             data(){
-                return options.state
+                return {
+                    $$state:options.state,
+                }
             }
-        })
-
+        }) 
+    }
+    get state (){
+        return this._vm._data.$$state
+        // console.log(this._vm._data.$$state);
+    }
+    set state (v){
+        console.error('请不要直接修改state的状态');
     }
 }
 
