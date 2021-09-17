@@ -1,6 +1,6 @@
 import Vue from "vue";
 // import Vuex from "vuex";
-import Vuex from './kvuex'
+import Vuex from "./kvuex";
 
 Vue.use(Vuex);
 
@@ -18,12 +18,21 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    add(ctx) {
+    //   ctx 上下文 解构赋值
+    add({ commit }) {
       let timer = setTimeout(() => {
-        ctx.commit("asyncAdd");
+        commit("asyncAdd");
         clearTimeout(timer);
-      },1000);
+      }, 1000);
     },
+  },
+  getter: {
+    doubleCout(state) {
+      return state.cout * 2;
+    },
+    xx(){
+        console.log('xixi');
+    }
   },
   modules: {},
 });
