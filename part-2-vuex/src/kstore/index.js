@@ -29,9 +29,6 @@ export default new Vuex.Store({
   getter: {
     doubleCout(state) {
       return state.cout * 2;
-    },
-    xx(){
-        console.log('xixi');
     }
   },
   modules: {},

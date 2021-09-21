@@ -1,35 +1,26 @@
 let Vue;
 
-const forEachValue=(obj)=>{
-    Object.keys(obj).forEach(item=>{
-        console.log(obj,item);
-        Object.defineProperty(obj,item,{
-            get: () => {
-                console.log(item);
-                return 'ewqe'
-              },
-        })
-    })
-}
-
-
-
 class Store {
   constructor(options) {
     //构造函数传入一个配置对象 state action mutations getter modules
     /**
      * 创建state属性 并暴露出去
      */
-    this.$options = options;
+    this.options = options;
     this._actions = options.actions;
     this._mutations = options.mutations;
     this._getter = options.getter;
 
-    forEachValue(options.getter)
-    // forEachValue(options.getters, (fn, name) => {
-    //   registerGetter(this, fn, name);
-    // });
-    // resetStoreVM(this, options.state);
+    this.getters = {};
+    Object.keys(this._getter).forEach((key) => {
+      console.log(key);
+      let that = this;
+      Object.defineProperty(this.getters, key, {
+        get: function() {
+          return options.getter[key](that.state);
+        },
+      });
+    });
 
     //对传入的state选项做响应式处理
     // 第一种方法
