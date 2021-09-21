@@ -87,4 +87,6 @@ export default { Store, install };
 /**
  * 1、通过$store.getter 访问一个属性
  * 2、调用这个属性的对象函数，返回结果
+ * 改进点，
+ * 需要把computed 和 getters 进行一个高阶函数的封装 
  */
