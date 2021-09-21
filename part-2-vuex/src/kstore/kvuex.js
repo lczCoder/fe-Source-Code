@@ -13,7 +13,6 @@ class Store {
 
     this.getters = {};
     Object.keys(this._getter).forEach((key) => {
-      console.log(key);
       let that = this;
       Object.defineProperty(this.getters, key, {
         get: function() {

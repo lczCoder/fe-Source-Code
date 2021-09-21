@@ -29,6 +29,9 @@ export default new Vuex.Store({
   getter: {
     doubleCout(state) {
       return state.cout * 2;
+    },
+    threeCout(state){
+      return state.cout * 3
     }
   },
   modules: {},
