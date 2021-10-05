@@ -1,3 +1,4 @@
 class Zvue{
-
+  constructor(options)
 }
+

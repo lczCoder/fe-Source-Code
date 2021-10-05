@@ -1,24 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <div id="app">
-    {{count}}
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+    </div>
+  </body>
 </html>
 <script src="./z-vue.js"></script>
 <script>
-// 实现vue api书写方法
-let vue = new Zvue({
-  el:'#app',
- data:{
-   count:1
- }
-})
+  // 实现vue api书写方法
+
+  // let vue = new Vue({
+  //   el:'#app',
+  //   data:{
+  //     count:1,
+  //   }
+  // })
+
+
+  let obj = {};
+  let app = document.getElementById("app");
+  console.log(app);
+  function defineReactive(obj, key, val) {
+    Object.defineProperty(obj, key, {
+      get() {
+        return val;
+      },
+      set(newVal) {
+        if (newVal !== val) {
+          val = newVal;
+          undate();
+        }
+      },
+    });
+  }
+  defineReactive(obj, "time", "");
+
+  function undate() {
+    app.innerText = obj.time;
+  }
+
+  setInterval(()=>{
+    obj.time = new Date().toLocaleTimeString()
+  })
 </script>
