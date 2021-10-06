@@ -7,8 +7,7 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="app">
-    </div>
+    <div id="app"></div>
   </body>
 </html>
 <script src="./z-vue.js"></script>
@@ -16,36 +15,14 @@
   // 实现vue api书写方法
 
   let vue = new Zvue({
-    el:'#app',
-    data:{
-      count:1,
-    }
-  })
+    el: "#app",
+    data: {
+      count: '',
+    },
+  });
 
 
-  // let obj = {};
-  // let app = document.getElementById("app");
-  // console.log(app);
-  // function defineReactive(obj, key, val) {
-  //   Object.defineProperty(obj, key, {
-  //     get() {
-  //       return val;
-  //     },
-  //     set(newVal) {
-  //       if (newVal !== val) {
-  //         val = newVal;
-  //         undate();
-  //       }
-  //     },
-  //   });
-  // }
-  // defineReactive(obj, "time", "");
-
-  // function undate() {
-  //   app.innerText = obj.time;
-  // }
-
-  // setInterval(()=>{
-  //   obj.time = new Date().toLocaleTimeString()
-  // })
+  setInterval(()=>{
+    vue.$data.count = new Date().toLocaleTimeString()
+  },1000)
 </script>
