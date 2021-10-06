@@ -15,37 +15,37 @@
 <script>
   // 实现vue api书写方法
 
-  // let vue = new Vue({
-  //   el:'#app',
-  //   data:{
-  //     count:1,
-  //   }
-  // })
-
-
-  let obj = {};
-  let app = document.getElementById("app");
-  console.log(app);
-  function defineReactive(obj, key, val) {
-    Object.defineProperty(obj, key, {
-      get() {
-        return val;
-      },
-      set(newVal) {
-        if (newVal !== val) {
-          val = newVal;
-          undate();
-        }
-      },
-    });
-  }
-  defineReactive(obj, "time", "");
-
-  function undate() {
-    app.innerText = obj.time;
-  }
-
-  setInterval(()=>{
-    obj.time = new Date().toLocaleTimeString()
+  let vue = new Zvue({
+    el:'#app',
+    data:{
+      count:1,
+    }
   })
+
+
+  // let obj = {};
+  // let app = document.getElementById("app");
+  // console.log(app);
+  // function defineReactive(obj, key, val) {
+  //   Object.defineProperty(obj, key, {
+  //     get() {
+  //       return val;
+  //     },
+  //     set(newVal) {
+  //       if (newVal !== val) {
+  //         val = newVal;
+  //         undate();
+  //       }
+  //     },
+  //   });
+  // }
+  // defineReactive(obj, "time", "");
+
+  // function undate() {
+  //   app.innerText = obj.time;
+  // }
+
+  // setInterval(()=>{
+  //   obj.time = new Date().toLocaleTimeString()
+  // })
 </script>
