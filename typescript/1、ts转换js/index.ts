@@ -1,7 +1,8 @@
-function greeter(person) {
-  return "Hello, " + person;
+let a:number = 1231
+
+function add(x:number,y:number):number{
+  return x+y
 }
 
-let user = "Jane User";
 
-document.body.innerHTML = greeter(user);
+console.log(add(1,2))

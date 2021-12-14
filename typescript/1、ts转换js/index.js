@@ -1,5 +1,5 @@
-function greeter(person) {
-    return "Hello, " + person;
+var a = 1231;
+function add(x, y) {
+    return x + y;
 }
-var user = "Jane User";
-document.body.innerHTML = greeter(user);
+console.log(add(1, 2));
