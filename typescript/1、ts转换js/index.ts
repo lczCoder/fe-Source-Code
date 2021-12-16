@@ -6,3 +6,13 @@ function add(x:number,y:number):number{
 
 
 console.log(add(1,2))
+
+type Person = {
+  name: string,
+  age:number,
+}
+
+let person:Person ={
+  name:'lcz',
+  age:24
+}
