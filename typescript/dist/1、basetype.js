@@ -8,21 +8,21 @@
  * 5、void 函数无返回值
  */
 // 数值
-var num0 = 10; //整数
-var num1 = 10.5; //浮点数
-var num2 = 2; //进制数
+const num0 = 10; //整数
+const num1 = 10.5; //浮点数
+const num2 = 0b10; //进制数
 // js中常见进制格式 二进制0b开头 八进制0开头 16进制0x开头
-var num3 = NaN; // not a number
-var num4 = Infinity; // 无穷数
+const num3 = NaN; // not a number
+const num4 = Infinity; // 无穷数
 // 字符
-var str0 = 'string'; //普通字符
-var str1 = "string"; //ES6 模板字符
+const str0 = 'string'; //普通字符
+const str1 = `string`; //ES6 模板字符
 // 布尔值
-var bool0 = true; //真
-var bool1 = false; //假
+const bool0 = true; //真
+const bool1 = false; //假
 // numm && undefined
-var n0 = null;
-var u0 = undefined;
+const n0 = null;
+const u0 = undefined;
 /**
  * null和undefined是所有类型的子类型,理论上来说，具有null和undefined类型的变量
  * 可以赋值给任意的对象
@@ -33,9 +33,16 @@ var u0 = undefined;
 // let w:symbol = undefined
 // ……
 // void
-var fn0 = function () {
+const fn0 = () => {
     console.log();
 };
 function fn1() {
     alert();
 }
+// sysbal
+const sys = Symbol('s');
+/**
+ * symbol 是es6中推出的新特性，使用的时候需要注意typescript对应解析的版本库，
+ * 在tsconfig.json中把target 提升至es2015往上
+ * 在使用symbol的时候，不需要使用new Symbol的方式去创建symbol对象，直接Symbol()即可
+ */ 
