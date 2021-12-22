@@ -17,4 +17,6 @@ var num4 = Infinity; // 无穷数
 // 字符
 var str0 = 'string'; //普通字符
 var str1 = "string"; //ES6 模板字符
-// 
+// 布尔值
+var bool0 = true; //真
+var bool1 = false; //假

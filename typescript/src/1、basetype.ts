@@ -17,6 +17,8 @@ const num4: number = Infinity // 无穷数
 
 // 字符
 const str0: string = 'string' //普通字符
-const str1:string = `string`  //ES6 模板字符
+const str1: string = `string`  //ES6 模板字符
 
-// 
+// 布尔值
+const bool0: boolean = true  //真
+const bool1: boolean = false //假
