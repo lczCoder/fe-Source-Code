@@ -32,3 +32,10 @@ var u0 = undefined;
 // let n:number = null
 // let w:symbol = undefined
 // ……
+// void
+var fn0 = function () {
+    console.log();
+};
+function fn1() {
+    alert();
+}

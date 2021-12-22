@@ -15,3 +15,5 @@ declare const u0: undefined;
  * ! 如果你的编译器报错了，请在tsconfig.json配置中把"strictNullChecks": false,设置为关闭
  * 默认打开设置，因为通常情况下，把null和undefined赋值给其他类型变量是不必要的。
  */
+declare const fn0: () => void;
+declare function fn1(): void;

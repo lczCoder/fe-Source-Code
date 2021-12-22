@@ -36,3 +36,10 @@ const u0: undefined = undefined
 // let w:symbol = undefined
 // ……
 
+// void
+const fn0 = (): void => {
+  console.log()
+}
+function fn1(): void {
+  alert()
+}
