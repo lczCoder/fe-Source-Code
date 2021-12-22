@@ -14,3 +14,7 @@ var num2 = 2; //进制数
 // js中常见进制格式 二进制0b开头 八进制0开头 16进制0x开头
 var num3 = NaN; // not a number
 var num4 = Infinity; // 无穷数
+// 字符
+var str0 = 'string'; //普通字符
+var str1 = "string"; //ES6 模板字符
+// 
