@@ -22,3 +22,17 @@ const str1: string = `string`  //ES6 模板字符
 // 布尔值
 const bool0: boolean = true  //真
 const bool1: boolean = false //假
+
+// numm && undefined
+const n0: null = null
+const u0: undefined = undefined
+/**
+ * null和undefined是所有类型的子类型,理论上来说，具有null和undefined类型的变量
+ * 可以赋值给任意的对象
+ * ! 如果你的编译器报错了，请在tsconfig.json配置中把"strictNullChecks": false,设置为关闭
+ * 默认打开设置，因为通常情况下，把null和undefined赋值给其他类型变量是不必要的。
+ */
+// let n:number = null
+// let w:symbol = undefined
+// ……
+
