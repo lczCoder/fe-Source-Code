@@ -17,4 +17,11 @@ function add(x:string | number):string|number {
  * 2、你所定义的变量，只能使用联合类型中类型的方法
  * 比如：let value = string | number 
  * value.length 就会报错，因为number类型的原型链上 不存在.length的方法
+ * 只能访问联合类型中的共有属性
+ * 3、后续变量可以变更成联合类型中定义的变量，系统会根据赋值来推断类型
  */
+
+let x:number | string ;
+x = 100 
+x = 200
+x = '123'
