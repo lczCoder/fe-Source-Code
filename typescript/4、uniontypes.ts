@@ -16,5 +16,5 @@ function add(x:string | number):string|number {
  * 的类型进行一个范围限制，（函数变量和返回值也可使用）
  * 2、你所定义的变量，只能使用联合类型中类型的方法
  * 比如：let value = string | number 
- * value.length 就会报错，因为number和string类型的原型链上 不存在.length的方法
+ * value.length 就会报错，因为number类型的原型链上 不存在.length的方法
  */
