@@ -25,3 +25,4 @@ let x:number | string ;
 x = 100 
 x = 200
 x = '123'
+// x = true error 

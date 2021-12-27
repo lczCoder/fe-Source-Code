@@ -22,4 +22,4 @@ declare const sys: symbol;
  * symbol 是es6中推出的新特性，使用的时候需要注意typescript对应解析的版本库，
  * 在tsconfig.json中把target 提升至es2015往上
  * 在使用symbol的时候，不需要使用new Symbol的方式去创建symbol对象，直接Symbol()即可
- */ 
+ */
