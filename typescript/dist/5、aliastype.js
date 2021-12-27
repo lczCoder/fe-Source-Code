@@ -12,4 +12,8 @@ define(["require", "exports"], function (require, exports) {
         return x;
     }
     getout(123);
+    let x = 'name';
+    x = 'age';
+    x = 123;
+    x = true;
 });
