@@ -21,5 +21,40 @@ let arr5: Array<number> = [1, 2, 3]
 let arr6: Array<string> = ['1', '2', '3']
 let arr7: Array<any> = [1, '2', true, {}, []]
 
+// 第三种 通过接口来定义数组
+// 一般情况下，我们不会用接口来定义数组，有几个特殊情况可以使用
+
+// 例子🌰
+// function add (){
+//     let arg:number[] = arguments  error
+// }
+function upp() {
+  let args: {
+    [index: number]: number;
+    length: number;
+    callee: Function;
+  } = arguments;
+}
+function add() {
+  let args: IArguments = arguments;
+}
+/**
+ * 1、函数参数列表arguments是一个类数组结构，不是一个真正的数组，没有数组的方法
+ * 2、NodeList \ HTMLCollection 等数据结构，也是类数组，需要通过接口来定义
+ * 3、在ts中，有这些特殊类型的接口定义方法， IArguments, NodeList, HTMLCollection
+ */
+
+
+interface Obj {
+  name: string,
+  age: number,
+  info: Object
+}
+
+let x: Obj[] = [{
+  name: 'lcz',
+  age: 24,
+  info: {}
+}]
 
 export { }
