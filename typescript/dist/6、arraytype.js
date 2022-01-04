@@ -16,4 +16,21 @@ define(["require", "exports"], function (require, exports) {
     let arr5 = [1, 2, 3];
     let arr6 = ['1', '2', '3'];
     let arr7 = [1, '2', true, {}, []];
+    // 第三种 通过接口来定义数组
+    // 一般情况下，我们不会用接口来定义数组，有几个特殊情况可以使用
+    // 例子🌰
+    // function add (){
+    //     let arg:number[] = arguments  error
+    // }
+    function upp() {
+        let args = arguments;
+    }
+    function add() {
+        let args = arguments;
+    }
+    let x = [{
+            name: 'lcz',
+            age: 24,
+            info: {}
+        }];
 });
