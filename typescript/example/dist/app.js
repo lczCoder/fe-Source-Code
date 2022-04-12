@@ -1,0 +1,1 @@
+(()=>{"use strict";var e={129:(e,o)=>{e.exports={name:"commonjs",age:24},o.type="commonjs",o.age=24},595:(e,o,r)=>{const{type:t,age:p}=r(129);console.log(t,p)}},o={};function r(t){var p=o[t];if(void 0!==p)return p.exports;var n=o[t]={exports:{}};return e[t](n,n.exports,r),n.exports}r(595),document.querySelectorAll("#app")[0].append("Hello TypeScript")})();
